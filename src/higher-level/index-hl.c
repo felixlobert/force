@@ -1162,6 +1162,10 @@ int tsa_spectral_index(ard_t *ard, tsa_t *ts, small *mask_, int nc, int nt, int 
       cite_me(_CITE_RVI_);
       index_rvi(ard, mask_, ts, sen->vv, sen->vh, nc, nt, nodata);
       break;
+    case _IDX_NB2_:
+      cite_me(_CITE_NB2_);
+      index_differenced(ard, mask_, ts, sen->swir1, sen->swir2, nc, nt, nodata);
+      break;
     default:
       printf("unknown INDEX\n");
       break;      
